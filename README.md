@@ -1,1 +1,1 @@
-Will it commit when I save this file in Obsidian?
+Welcome to my brainstorm. This is a collection of unfinished thoughts synced with GitHub via Obsidian. Read with caution. I am doing this so that I can informally publish and build on ideas 

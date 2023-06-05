@@ -1,1 +1,1 @@
-Welcome to my brainstorm. This is a collection of unfinished thoughts synced with GitHub via Obsidian. Read with caution. I am doing this so that I can informally publish and build on ideas 
+Welcome to my brainstorm. This is a collection of unfinished thoughts synced with GitHub via Obsidian. Read with caution. I am doing this so that I can informally publish and build on ideas before they are fully developed.

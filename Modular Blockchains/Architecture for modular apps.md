@@ -47,9 +47,16 @@ flowchart LR
 	D(Application Schema) --> |Loaded into| E(Application / Frontend)
 ```
 
-In order to do this, you should imagine the perfect UX for developers
+In order to do this, you should ask yourself two questions.
+1. What data is needed to provide users with a great UX?
+2. What format should that data be in so that developers can have a great DX?
+The data needed by your users in a format that works for developers is what you call the **Application Schema**.
 
-Then, you will simply need to write a transformation from Modular Cloud's representation of 
+Your job is to take the data provided by Modular Cloud and transform it into your application schema, using a [Backend-for-Frontend (BFF)](https://samnewman.io/patterns/architectural/bff/) architecture. So, let's explore some patterns for how to do this and also see how Modular Cloud's service offering can help.
+
+
+
+
 ## Optimizing reusability
 Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.
 

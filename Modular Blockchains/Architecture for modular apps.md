@@ -20,6 +20,17 @@ The reality is that each chain must be integrated individually, because of our f
 
 Therefore, our strategies revolve around reducing the impact of needing to build these integrations. How can we make this process as easy as possible?
 
+## Big picture
+```mermaid
+flowchart LR
+	A[Protocol] -->|Data extracted by| B(Indexer)
+	B --> |Transforms to| C(Abstraction)
+	C --> |Transforms to| D(Application Schema)
+	B --> |Transforms to| D
+	D --> |Loads into| E(Application / Frontend)
+```
+Modular Cloud is designed to handle 
+
 ## Optimizing reusability
 Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.
 

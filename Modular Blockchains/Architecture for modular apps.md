@@ -63,10 +63,14 @@ Then, they will convert blocks from each blockchain into that `AbstarctBlock` su
 ### Downsides
 This approach has a major downside. There is a tradeoff between complexity and expressiveness (for lack of a better term).
 
-Here is an example
+**Here are some examples.**
+1. Cosmos blocks have a `ChainID` in their block header. EVM blocks typically do not. Therefore, an `AbstractBlock` would either need an *optional* `ChainID` field (which introduces complexity to the application depending on this class), or it would need to omit the field entirely (which would be a less useful way to represent block data—since applications would not have access to `ChainID` information).
+2. Sometimes there are common concepts that can be mapped to the same field, such as the `AppHash` in Cosmos and `StateRoot` on the EVM. However, these fields are not exactly equivalent and must be used in different ways. Cosmos stores state as an IAVL tree whereas the EVM uses a Patricia Tree.
 
+Given that the goal of this architecture is to reduce the complexity of implementing different chains, it is our recommendation that an abstraction should err on the side of omitting information that cannot be generalized across protocols. Therefore, apps building on abstractions will have less capabilities than those that do not.
 
-
+### Benefits
+If you *can* rely on abstraction, then you *should*. Because this is the easiest and most scalable way to work with multiple chains. 
 
 ## Optimizing reusability
 Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.

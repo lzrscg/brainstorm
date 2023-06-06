@@ -61,7 +61,10 @@ Most programmers building multichain applications will try to think in abstracti
 Then, they will convert blocks from each blockchain into that `AbstarctBlock` superclass and build their applications to utilize this common representation instead of each individual block schema.
 
 ### Downsides
-This approach has a major downside. There is a tradeoff between complexity and 
+This approach has a major downside. There is a tradeoff between complexity and expressiveness (for lack of a better term).
+
+Here is an example
+
 
 
 

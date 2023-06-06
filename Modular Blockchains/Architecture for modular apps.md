@@ -18,4 +18,9 @@ The reality is that each chain must be integrated individually, because of our f
 
 > **Tenet 1:** We cannot make common assumptions about all protocols.
 
+Therefore, our strategies revolve around reducing the impact of needing to build these integrations. How can we make this process as easy as possible?
+
+## Optimizing reusability
+Given 2 chains, we cannot assume that they will have the same data retrieval APIs. However, it is possible that they do. For example, many chains utilize the EVM. The chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.
+
 

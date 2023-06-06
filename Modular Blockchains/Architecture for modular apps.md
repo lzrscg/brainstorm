@@ -90,7 +90,10 @@ This works particularly well when network effects accumulate behind a given abst
 - The developers who built the 10 apps had to do ***no additional work***—but their app automatically got more powerful.
 
 ## Entities
-If abstractions
+If abstractions are too much of an oversimplification for your application, then you will want to use something similar to the [Entity-Component System (ECS)](https://t-machine.org/index.php/2007/09/03/entity-systems-are-the-future-of-mmog-development-part-1/) architecture. This is most commonly used in games, when it is necessary to deal with thousands of different unique game objects (which is similar to dealing with thousands of different blockchain data types).
+
+### Simplified version
+It is likely unnecessary to build a full ECS engine for your app. There is a simple way to think about this, which is likely sufficient 
 
 ## Optimizing reusability
 Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.

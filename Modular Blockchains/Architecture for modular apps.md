@@ -59,6 +59,13 @@ Your job is to take the data provided by Modular Cloud and transform it into you
 Most programmers building multichain applications will try to think in abstractions. So for example, they will try to create an `AbstractBlock` parent class from which `EVMBlock`, `CosmosBlock`, `MoveBlock`, etc. inherit.
 
 Then, they will convert blocks from each blockchain into that `AbstarctBlock` superclass and build their applications to utilize this common representation instead of each individual block schema.
+```mermaid
+flowchart LR
+	A[EVM Block] --> X(Abstract Block)
+	B[Cosmos Block] --> X
+	C[Move Block] --> X
+	X --> Y(Application Schema)
+```
 
 ### Downsides
 This approach has a major downside. There is a tradeoff between complexity and expressiveness (for lack of a better term).
@@ -70,7 +77,20 @@ This approach has a major downside. There is a tradeoff between complexity and e
 Given that the goal of this architecture is to reduce the complexity of implementing different chains, it is our recommendation that an abstraction should err on the side of omitting information that cannot be generalized across protocols. Therefore, apps building on abstractions will have less capabilities than those that do not.
 
 ### Benefits
-If you *can* rely on abstraction, then you *should*. Because this is the easiest and most scalable way to work with multiple chains. 
+If you *can* rely on abstraction, then you *should*. Because this is the easiest and most scalable way to work with multiple chains.
+
+This works particularly well when network effects accumulate behind a given abstraction. For example, if many different apps use the same abstraction, then protocols will be incentivized to build the transformations themselves.
+
+**Here is a hypothetical example:**
+- Imagine there is an abstraction called `AbstractBlock`.
+- 10 different apps utilize this abstraction (such as a block explorer, on-chain monitoring service, social network, etc.)
+- A new team creates a unique protocol or VM.
+- They want compatibility with these 10 apps, so they using Modular Cloud to index their protocol and map their new block schema to the `AbstractBlock` type.
+- Now, all 10 apps will automatically have full support for this new protocol
+- The developers who built the 10 apps had to do ***no additional work***—but their app automatically got more powerful.
+
+## Entities
+If abstractions
 
 ## Optimizing reusability
 Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.

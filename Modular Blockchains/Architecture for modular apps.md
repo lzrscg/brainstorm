@@ -33,7 +33,17 @@ A large majority of projects with adoption are in those two respective ecosystem
 Here are some difference to look out for between Cosmos and EVM chains.
 
 **Differences between Cosmos chains:**
-- The biggest challenge we have faced is each chain can having different message schemas. So someone indexing a Cosmos chain will likely need to load unique protobufs for each chain.
+- The biggest challenge we have faced is each chain can having different [message](https://docs.cosmos.network/v0.47/building-modules/messages-and-queries) schemas. So someone indexing a Cosmos chain will likely need to load unique protobufs for each chain.
+- Celestia is *sort of* a Cosmos chain. They [forked Tendermint](https://github.com/celestiaorg/celestia-core) and therefore have a slightly different pattern for parsing transactions and other data. Other projects might do this too, but we have yet to encounter this as an issue.
 
 **Differences between EVM chains:**
-- 
+- The biggest challenge we have faced is that chains have different `debug_` and `trace_` endpoints. It can be challenging, or even impossible, to get internal transactions and state transitions for some EVM chains.
+- Not all chains will have adopted all EIPs. The only one that comes to mind at the moment of writing this is EIP-1559, but I wouldn't be surprised if there are more differences.
+- Pre-deployed contracts might break the assumptions of indexers, although it is possible to build a system that handles this gracefully.
+
+### Prefer HTTP
+We have found that JSON-RPC-style HTTP APIs are the more universal way to access data across protocols. Websockets are cool. gRPC is cool. etc. But HTTP is the most best medium for building and optimizing a reusable indexing system.
+
+With that said, under some contexts, HTTP may not be suitable.
+
+**Note:** Modifying a node to index directly may be tempting, but is not a scalable way to index data. It should only be done when absolutely necessary. The biggest benefit is increased performance and biggest downside is decreased maintainability.

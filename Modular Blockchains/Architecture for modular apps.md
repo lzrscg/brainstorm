@@ -46,7 +46,10 @@ You should instead focus on the last part of the flow.
 flowchart LR
 	D(Application Schema) --> |Loaded into| E(Application / Frontend)
 ```
-First, bu
+
+In order to do this, you should imagine the perfect UX for developers
+
+Then, you will simply need to write a transformation from Modular Cloud's representation of 
 ## Optimizing reusability
 Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.
 

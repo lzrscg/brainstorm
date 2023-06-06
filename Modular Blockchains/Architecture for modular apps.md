@@ -54,6 +54,14 @@ The data needed by your users in a format that works for developers is what you 
 
 Your job is to take the data provided by Modular Cloud and transform it into your application schema, using a [Backend-for-Frontend (BFF)](https://samnewman.io/patterns/architectural/bff/) architecture. So, let's explore some patterns for how to do this and also see how Modular Cloud's service offering can help.
 
+# Concepts and Patterns
+## Abstractions
+Most programmers building multichain applications will try to think in abstractions. So for example, they will try to create an `AbstractBlock` parent class from which `EVMBlock`, `CosmosBlock`, `MoveBlock`, etc. inherit.
+
+Then, they will convert blocks from each blockchain into that `AbstarctBlock` superclass and build their applications to utilize this common representation instead of each individual block schema.
+
+### Downsides
+This approach has a major downside. There is a tradeoff between complexity and 
 
 
 

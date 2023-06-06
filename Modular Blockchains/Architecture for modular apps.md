@@ -21,6 +21,19 @@ The reality is that each chain must be integrated individually, because of our f
 Therefore, our strategies revolve around reducing the impact of needing to build these integrations. How can we make this process as easy as possible?
 
 ## Optimizing reusability
-Given 2 chains, we cannot assume that they will have the same data retrieval APIs. However, it is possible that they do. For example, many chains utilize the EVM. The chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.
+Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.
 
+So it is therefore reasonable to to create a general **EVM integration**. However, it is important re-emphasize that there is no one-size fits all EVM integration. Even the aforementioned `eth_getTransactionByHash` endpoint may or may not support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) fields such as `maxPriorityFeePerGas`.
 
+### 80/20 Integrations
+How can you get 80% of the benefits of a multichain app by doing only 20% of the work? **Prioritize the EVM and Cosmos.** 
+
+A large majority of projects with adoption are in those two respective ecosystem. I expect this share to decrease over time, however, this is certainly true for the time being.
+
+Here are some difference to look out for between Cosmos and EVM chains.
+
+**Differences between Cosmos chains:**
+- The biggest challenge we have faced is each chain can having different message schemas. So someone indexing a Cosmos chain will likely need to load unique protobufs for each chain.
+
+**Differences between EVM chains:**
+- 

@@ -23,14 +23,30 @@ Therefore, our strategies revolve around reducing the impact of needing to build
 ## Big picture
 ```mermaid
 flowchart LR
+	subgraph Modular Cloud provides...
 	A[Protocol] -->|Data extracted by| B(Indexer)
-	B --> |Transforms to| C(Abstraction)
-	C --> |Transforms to| D(Application Schema)
-	B --> |Transforms to| D
-	D --> |Loads into| E(Application / Frontend)
+	B --> |Transformed to| C(Abstraction)
+	end
+	subgraph Modular Cloud's platform enables you to implement...
+	C --> |Transformed to| D(Application Schema)
+	B --> |Transformed to| D
+	end
+	D --> |Loaded into| E(Application / Frontend)
 ```
-Modular Cloud is designed to handle 
+Modular Cloud completely handles the indexing process, and all of the intricacies that come along with it. When building an app, you should not have to think about such low-level problems. Instead, you should focus on building your application logic.
 
+Therefore, you can leave it up to the protocol teams that work closely with Modular Cloud to implement this first part of the flow.
+```mermaid
+flowchart LR
+	A[Protocol] -->|Data extracted by| B(Indexer)
+```
+
+You should instead focus on the last part of the flow.
+```mermaid
+flowchart LR
+	D(Application Schema) --> |Loaded into| E(Application / Frontend)
+```
+First, bu
 ## Optimizing reusability
 Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.
 

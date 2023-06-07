@@ -96,3 +96,5 @@ If abstractions are too much of an oversimplification for your application, then
 There is a simple way to think about this, which is likely sufficient in most cases.
 
 Structure data based on how it appears in the UI, not based on what it means. In other words, ignore domain knowledge about the data.
+
+Here is an example from out block explorer.

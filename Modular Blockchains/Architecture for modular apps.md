@@ -93,34 +93,6 @@ This works particularly well when network effects accumulate behind a given abst
 If abstractions are too much of an oversimplification for your application, then you will want to use something similar to the [Entity-Component System (ECS)](https://t-machine.org/index.php/2007/09/03/entity-systems-are-the-future-of-mmog-development-part-1/) architecture. This is most commonly used in games, when it is necessary to deal with thousands of different unique game objects (which is similar to dealing with thousands of different blockchain data types).
 
 ### Simplified version
-It is likely unnecessary to build a full ECS engine for your app. There is a simple way to think about this, which is likely sufficient in most cases.
+There is a simple way to think about this, which is likely sufficient in most cases.
 
-Build data for the 
-
-## Optimizing reusability
-Given any 2 chainz, we cannot assume that they will have the same data retrieval APIs. However, it is *possible* that they do. For example, many chains utilize the EVM. These chains all share common characteristics, such as the endpoint `eth_getTransactionByHash`.
-
-So it is therefore reasonable to to create a general **EVM integration**. However, it is important re-emphasize that there is no one-size fits all EVM integration. Even the aforementioned `eth_getTransactionByHash` endpoint may or may not support [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) fields such as `maxPriorityFeePerGas`.
-
-### 80/20 Integrations
-How can you get 80% of the benefits of a multichain app by doing only 20% of the work? **Prioritize the EVM and Cosmos.** 
-
-A large majority of projects with adoption are in those two respective ecosystem. I expect this share to decrease over time, however, this is certainly true for the time being.
-
-Here are some difference to look out for between Cosmos and EVM chains.
-
-**Differences between Cosmos chains:**
-- The biggest challenge we have faced is each chain can having different [message](https://docs.cosmos.network/v0.47/building-modules/messages-and-queries) schemas. So someone indexing a Cosmos chain will likely need to load unique protobufs for each chain.
-- Celestia is *sort of* a Cosmos chain. They [forked Tendermint](https://github.com/celestiaorg/celestia-core) and therefore have a slightly different pattern for parsing transactions and other data. Other projects might do this too, but we have yet to encounter this as an issue.
-
-**Differences between EVM chains:**
-- The biggest challenge we have faced is that chains have different `debug_` and `trace_` endpoints. It can be challenging, or even impossible, to get internal transactions and state transitions for some EVM chains.
-- Not all chains will have adopted all EIPs. The only one that comes to mind at the moment of writing this is EIP-1559, but I wouldn't be surprised if there are more differences.
-- Pre-deployed contracts might break the assumptions of indexers, although it is possible to build a system that handles this gracefully.
-
-### Prefer HTTP
-We have found that JSON-RPC-style HTTP APIs are the more universal way to access data across protocols. Websockets are cool. gRPC is cool. etc. But HTTP is the most best medium for building and optimizing a reusable indexing system.
-
-With that said, under some contexts, HTTP may not be suitable.
-
-**Note:** Modifying a node to index directly may be tempting, but is not a scalable way to index data. It should only be done when absolutely necessary. The biggest benefit is increased performance and biggest downside is decreased maintainability.
+Structure data based on how it appears in the UI, not based on 

@@ -22,7 +22,7 @@ Therefore, our strategies revolve around reducing the impact of needing to build
 
 ## Big picture
 ```mermaid
-flowchart LR
+flowchart TD
 	subgraph Modular Cloud provides...
 	A[Protocol] -->|Data extracted by| B(Indexer)
 	B --> |Transformed to| C(Abstraction)
@@ -254,12 +254,23 @@ Here are some areas of fragmentation:
 - Different chains can have different pre-deployed contracts. This must be taken into account if you are building contextualization systems depending on the contract deployment event.
 - As mentioned earlier, not all EVM chains have Chain IDs.
 
-# Modular Cloud
-Modular Cloud is here to help with building apps for multiple chains in the modular era.
+## I don't like centralized cloud-based applications. Can this be decentralized?
+Yes, this architecture does not depend on data coming from any specific source. This is about how you organize code while building your consumer application. Modular Cloud working to create decentralized solutions that support this long-term. However, keep in mind that there are certain benefits that the cloud provides which decentralized systems can never match. Each app must judge their needs on a case-by-case basis.
 
-**What we offer**
-- Indexer for any chain
-- RPC endpoints and data retrieval API for any chain
+# Modular Cloud
+Modular Cloud is here to help you build apps for multiple chains in the modular era.
+
+**What we will be launching in the coming months**
+- Indexing for any chain
+- RPC endpoints and data retrieval APIs for any chain
 - Custom transformations on data
 - Custom API endpoints
+- Execute arbitrary code after any on-chain event
+- A block explorer capable of displaying data from any chain (helpful for devs)
+- And best of all: **usage-based billing**
+ 
+Usage-based billing is important because maintaining the infrastructure for every chain is not only difficult, but also *expensive.* Ideally, you can support thousands of chains but don't have to index and store trillions of blocks. If a user wants data from a given protocol, you should just be able to provide that data... without worrying about that ***entire chain***.
 
+As the leaders in cloud infrastructure for this space, we are also developing tools that make this whole process easy.
+
+If this interests you, [get in touch](lzrs@modular.cloud).

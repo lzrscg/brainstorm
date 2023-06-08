@@ -273,4 +273,4 @@ Usage-based billing is important because maintaining the infrastructure for ever
 
 As the leaders in cloud infrastructure for this space, we are also developing tools that make this whole process easy.
 
-If this interests you, [get in touch](lzrs@modular.cloud).
+If this interests you, [get in touch](mailto:lzrs@modular.cloud).

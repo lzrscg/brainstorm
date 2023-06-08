@@ -97,7 +97,7 @@ There is a simple way to think about this, which is likely sufficient in most ca
 
 **Use the UI as the abstraction.** 
 
-Here is an example from our block explorer.
+Here is an example from [Modular Cloud's block explorer](https://github.com/modularcloud/explorer).
 ![[explorer-arch.png]]
 As you can see the raw blocks are not transformed into an `AbstractBlock`, but instead directly formatted for the UI.
 
@@ -154,6 +154,11 @@ if(address) {
 // ...
 ```
 
-Instead, you want to concentrate all of this conditional logic into an **integration**. The **application schema** will be based on the needs of the UI. Then, the integration will take care of mapping the raw protocol data directly to that application schema.
+Instead, you want to concentrate all of this conditional logic into an **integration**. The **application schema** will be based on the needs of the UI. Then, the integration will take care of mapping the raw protocol data directly to that application schema (this is called **"Integration Logic"**).
 
-Therefore, the frontend will ins
+This simplifies the whole application.
+- Each integration maps the protocols schema to the application schema. There is no need use complicated conditional logic because each protocol has its own integration.
+- The UI is separated from integration logic as well. This allows UI developers to focus on the application, and not the semantics of the underlying protocols.
+- Instead of adding complexity, you add more integrations. Each of which maps to an application schema that is controlled by the needs of the UI (and not based on a poorly generalized abstraction).
+
+### Advanced version

@@ -162,3 +162,10 @@ This simplifies the whole application.
 - Instead of adding complexity, you add more integrations. Each of which maps to an application schema that is controlled by the needs of the UI (and not based on a poorly generalized abstraction).
 
 ### Advanced version
+This is being [actively developed](https://github.com/modularcloud/explorer/tree/main/packages/%40modularcloud/ecs) by Modular Cloud and should still be considered experimental.
+
+We can break down an app into several pieces:
+- **Entities:** An individual instance of an item, such as a block or transaction.
+- **Components:** Data associated with an entity. For example, a block with height 420 would be an `Entity` and it could have a `HeightComponent` with the value `420`.
+- **Systems:** Code that does something for the user based on one or more entities.
+

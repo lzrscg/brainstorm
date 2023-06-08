@@ -101,8 +101,59 @@ Here is an example from our block explorer.
 ![[explorer-arch.png]]
 As you can see the raw blocks are not transformed into an `AbstractBlock`, but instead directly formatted for the UI.
 
-On the sidebar, `ZBC` is the the balance of a token held by this wallet. If this user had other tokens, they would be reflected here too. However, this section is not called `balances`. Instead it is called `attributes` (which implies its a generic key/value data structure). This sidebar is reused for non-balance data at other times in the explorer.
+On the sidebar, `ZBC` is the the balance of a token held by this wallet. If this user had other tokens, they would be reflected here too. However, this section is not called `balances`. Instead it is called `attributes` (which implies its a generic key/value data structure). This sidebar is reused for *non-balance data* at other times in the explorer.
 ![[Screenshot 2023-06-08 at 8.06.33 AM.png]]
 Here it is displaying metadata about block `16388443`.
 
 #### Why is this a good pattern?
+> **Tenet 2:** Compared to a monolithic architecture, a modular blockchain architecture will contain a very large number of (sometimes subtly) different data types
+
+Keeping track of all the different data types in the UI will quickly cause complexity in the core application. For example,
+
+**Sidebar.jsx**
+```javascript
+if(block) {
+	setSidebarContent(block.header)
+}
+if(address) {
+	setSidebarContent(getBalances(address))
+}
+// ...
+```
+
+**Table.jsx**
+```javascript
+if(block) {
+	setTableContent(block.transactions)
+}
+if(address) {
+	setSidebarContent(getTransactions(address))
+}
+// ...
+```
+
+As you add more data types, this gets increasingly complex across the application. Dealing with subtleties can make this even more difficult. For example, there may be different logic to display balances between EVM and Cosmos.
+
+**Sidebar.jsx (revisited)**
+```javascript
+if(block) {
+	setSidebarContent(block.header)
+}
+if(address) {
+	if(block.type === "EVM") {
+		setSidebarContent(
+			fromWei(
+				getBalances(address)
+			)
+		)
+	}
+	if(block.type === "Cosmos") {
+		setSidebarContent(getBalances(address))
+	}
+}
+// ...
+```
+
+Instead, you want to concentrate all of this conditional logic into an **integration**. The **application schema** will be based on the needs of the UI. Then, the integration will take care of mapping the raw protocol data directly to that application schema.
+
+Therefore, the frontend will ins

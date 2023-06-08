@@ -95,7 +95,14 @@ If abstractions are too much of an oversimplification for your application, then
 ### Simplified version
 There is a simple way to think about this, which is likely sufficient in most cases.
 
-Structure data based on how it appears in the UI, not based on what it means. In other words, ignore domain knowledge about the data.
+**Use the UI as the abstraction.** 
 
-**Here is an example from our block explorer.** 
+Here is an example from our block explorer.
 ![[explorer-arch.png]]
+As you can see the raw blocks are not transformed into an `AbstractBlock`, but instead directly formatted for the UI.
+
+On the sidebar, `ZBC` is the the balance of a token held by this wallet. If this user had other tokens, they would be reflected here too. However, this section is not called `balances`. Instead it is called `attributes` (which implies its a generic key/value data structure). This sidebar is reused for non-balance data at other times in the explorer.
+![[Screenshot 2023-06-08 at 8.06.33 AM.png]]
+Here it is displaying metadata about block `16388443`.
+
+#### Why is this a good pattern?

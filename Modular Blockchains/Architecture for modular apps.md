@@ -97,10 +97,5 @@ There is a simple way to think about this, which is likely sufficient in most ca
 
 Structure data based on how it appears in the UI, not based on what it means. In other words, ignore domain knowledge about the data.
 
-**Here is an example from out block explorer.** 
-![[Screenshot 2023-06-07 at 10.37.59 AM.png]]
-
-This component is at the top of our sidebar.
-
-
+**Here is an example from our block explorer.** 
 ![[explorer-arch.png]]

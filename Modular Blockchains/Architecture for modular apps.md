@@ -164,8 +164,34 @@ This simplifies the whole application.
 ### Advanced version
 This is being [actively developed](https://github.com/modularcloud/explorer/tree/main/packages/%40modularcloud/ecs) by Modular Cloud and should still be considered experimental.
 
-We can break down an app into several pieces:
-- **Entities:** An individual instance of an item, such as a block or transaction.
-- **Components:** Data associated with an entity. For example, a block with height 420 would be an `Entity` and it could have a `HeightComponent` with the value `420`.
-- **Systems:** Code that does something for the user based on one or more entities.
+We can break down an app into several pieces.
 
+#### Entities
+> An individual instance of an item, such as a block or transaction.
+
+Everything is an entity. There are no classes or types. If you are building are displaying a block in your app, it is an entity. If you are displaying a transaction, it is an entity. There is **no such thing** as a `BlockEntity` or `TransactionEntity`.
+
+#### Components
+> Data associated with an entity. For example, a block with height 420 would be an `Entity` and it could have a `HeightComponent` with the value `420`.
+
+Components are pure data. A given component can have a set schema. Going back to our **Sidebar.jsx** example from before, we could have an `AttributesComponent`.
+- In the case of viewing a block, data from the block header would be stored in the `AttributesComponent`.
+- In the case of viewing an address, the token balances would be stored in the `AttributesComponent`.
+- If an entity does not have attributes, then it's possible to have no `AttributesComponent` at all.
+
+The implication of this is that the application using these entities would look for the `AttributesComponent` if it needed to access the "attributes". It would not contain any logic based on whether or not the type of the entity is "Block" or "Address".
+
+The integration logic is what builds the entities with the appropriate components. The application acts based on what entities are loaded into it, and what their respective components are.
+
+#### Systems
+> Code that does something for the user based on one or more entities.
+
+Simply put, the UI is made up of a set of systems.
+
+In Modular Cloud's explorer, the sidebar is a *React Component* (not to be confused with an *ECS component*) that operates as a system. Roughly speaking, it expects to receive an entity with an `AttributesComponent` (actually called a `SidebarComponent`). If such an entity is found, then it will display the info in the sidebar. If not, then it will display nothing.
+
+This system knows nothing about Block, Transactions, or Addresses. It just knows that if sidebar data is there, then it will display it.
+
+When writing new integrations, the developer must decide what information is relevant to the sidebar, and should put it in that component.
+
+## Hybrid

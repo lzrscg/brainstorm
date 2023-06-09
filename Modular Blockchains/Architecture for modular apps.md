@@ -127,7 +127,7 @@ if(block) {
 	setTableContent(block.transactions)
 }
 if(address) {
-	setSidebarContent(getTransactions(address))
+	setTableContent(getTransactions(address))
 }
 // ...
 ```

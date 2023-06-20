@@ -4,20 +4,12 @@ Blockchain theorists should be obsessing over app developers in the same way tha
 
 What do they want? Let's dive in.
 
-# Historical background
-## Bitcoin
-First, there was Bitcoin.
+# Methodology
+Since I am not a blockchain theorist, I will be forced to work from first-principles. I will ask myself, what do I believe to be fundamentally true about the world? Then I will tie this to observations about blockchain technology. 
 
-Although Bitcoin *can* be thought of as a technology platform, it launched with a killer app: Electronic cash. It did this one thing really well (below a certain scale). And, in the process, there was one major innovation and one minor optimization that it pioneered.
+Next, I will use these observations as a basis for a plausible narrative. This narrative ought to be judged over time, based on whether or not people who believe it are able to take actionable insight from it that gives them a competitive advantage over those who do not.
 
-### Proof-of-Work
-Coordination can be easy in small groups, but scales very poorly. By the time you hit a global scale, it is almost impossible to gain consensus on anything.
+# First principles
 
-Proof-of-Work allowed a global network of untrusted participants come to consensus on a *narrow set of facts*. It did this in several ways:
-- **It constrained attack vectors** - cryptography gave certain mathematical guarantees. For example, it is impossible to send a transaction without the private key or build a block without mining. *Anything can happen* at a central bank. *Anything is possible* in an application hosted on Amazon Web Services. Bitcoin is **not** 100% secure, but there are only a few possible ways of attacking it.
-- **It enabled users to formally model risk** - for the risks that *do* exist, users can quantify their cost. So, for example, a user can calculate *how expensive is it to buy enough hash power to double spend*. They, then, know that a transaction with a value much smaller is unlikely to get reversed, since the cost of doing so would greatly outweigh the benefit. 
-
-
-
-## Ethereum
-Next, came Ethereum.
+## Coordination does not scale
+Coordinating between two people is hard enough. As the number of participants in any system grows, coordination costs increase exponentially. This is often referred to as 

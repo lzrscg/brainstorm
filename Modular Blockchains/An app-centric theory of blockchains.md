@@ -15,7 +15,9 @@ Coordination can be easy in small groups, but scales very poorly. By the time yo
 
 Proof-of-Work allowed a global network of untrusted participants come to consensus on a *narrow set of facts*. It did this in several ways:
 - **It constrained attack vectors** - cryptography gave certain mathematical guarantees. For example, it is impossible to send a transaction without the private key or build a block without mining. *Anything can happen* at a central bank. *Anything is possible* in an application hosted on Amazon Web Services. Bitcoin is **not** 100% secure, but there are only a few possible ways of attacking it.
-- **It enabled users to formally model risk** - 
+- **It enabled users to formally model risk** - for the risks that *do* exist, users can quantify their cost. So, for example, a user can calculate *how expensive is it to buy enough hash power to double spend*. They, then, know that a transaction with a value much smaller is unlikely to get reversed, since the cost of doing so would greatly outweigh the benefit. 
+
+
 
 ## Ethereum
 Next, came Ethereum.

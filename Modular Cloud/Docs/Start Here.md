@@ -1,4 +1,9 @@
-Modular Cloud offers a **free, open source block explorer** that can easily integrate with **any new decentralized protocol**. The backend of this block explorer is powered by our cloud—a platform that allows developers to build applications on top of these protocols.
+Modular Cloud enables developers to build multi-chain applications with ease. The flagship product powered by Modular Cloud is Explorer—a free and open source block explorer that is easy to integrate with *any protocol*.
+
+In a modular world, it is easy to build new chains, rollups, and decentralized protocols. Since traditional blockchain applications are not built to handle multiple chains, this creates huge opportunities for individuals and teams building for this new paradigm. Modular Cloud gives developers everything they need to take on this emerging market.
+
+
+
 
 ## Why protocol developers should work with us
 *A protocol developer is an individual or organization that is building an L1 blockchain, rollup, or other type of decentralized protocol.*

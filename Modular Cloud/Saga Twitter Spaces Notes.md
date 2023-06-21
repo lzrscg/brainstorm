@@ -25,3 +25,6 @@ How Modular Cloud can work with Saga
 - We intend to build deeper integrations with Saga surrounding ICS, so you can see what is happening on at all layers of your application.
 - We want to work specifically with members of the vibrant Saga community to tailor our products to their needs.
 - We understand the technology behind Saga, have worked with projects using Saga, and, of course, are talking to Saga directly. So please, reach out if you are in the community and want to work together.
+
+Quote
+"Saga is leading the charge in making blockchain application development truly accessible. They have managed to put unprecedented power into the hands of developers—by giving them dedicated chainlets—while streamlining and simplifying the development process—with cutting-edge tools and automations. We are glad to be able to support them as they realize this vision." Lzrs, CEO, Modular Cloud

@@ -10,13 +10,11 @@ Since I am not a blockchain theorist, I will be forced to work from first-princi
 Next, I will use these observations as a basis for a plausible narrative. This narrative ought to be judged over time, based on whether or not people who believe it are able to take actionable insight from it that gives them a competitive advantage over those who do not.
 
 # First principles
+## You cannot predict the outcome of a complex system by analyzing its individual components
 
-## Metaphors are dangerous
-This isn't so much a principle, as it is a word of caution. Don't hold on to your metaphors.
 
-Is Bitcoin "electronic cash"? Is Ethereum a "world computer"? Is blockchain technology "web 3"? Maybe this is a useful way of framing these systems. But, each one is defined by very specific sets of code. And this code is contextualized by the physical world that surrounds us all. *That* truly defines how these systems will behave, not the mental models we use to reason about them.
+## Metaphors don't scale
 
-It is entirely possible that there are better, more adaptive, was of thinking about these things.
 
 ## Coordination does not scale
 Coordinating between two people is hard enough. As the number of participants in any system grows, coordination costs increase exponentially. This is often referred to as Brooks' Law.

@@ -1,8 +1,6 @@
 Modular Cloud enables developers to build multi-chain applications with ease. The flagship product powered by Modular Cloud is Explorer—a free and open source block explorer that is easy to integrate with *any protocol*.
 
-In a modular world, it is easy to build new chains, rollups, and decentralized protocols. Since traditional blockchain applications are not built to handle multiple chains, this creates huge opportunities for individuals and teams building for this new paradigm. Modular Cloud gives developers everything they need to take on this emerging market.
-
-
+In a modular world, it is anyone can create a new chain, rollup, or decentralized protocols. Since traditional blockchain cloud infrastructure is not built to handle multiple chains, this creates huge opportunities for individuals and teams building for this new paradigm. Modular Cloud gives developers everything they need to take on this emerging market.
 
 
 ## Why protocol developers should work with us
@@ -14,4 +12,6 @@ In a modular world, it is easy to build new chains, rollups, and decentralized p
 
 ## Why application developers should work with us
 *An application developer is an individual or organization that is using a decentralized protocol. This could be a game, dapp, wallet, dev tool, or even a block explorer.*
-- Our block explorer can be customized to fit the needs of your application. Instead of only focusing on the base protocol, our explorer enables rich contextualization at the application level.
+- Our block explorer can be customized to fit the needs of your application. Instead of only focusing on the base protocol, we also offer rich contextualization at the application level.
+- You can build apps that work with hundreds of chains, including ones that are not often supported by other cloud providers.
+- Usage-based billing. No fixed costs for hosting, indexing, or storage. This is particularly important when you are working with muitlple chains.

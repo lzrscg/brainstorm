@@ -32,7 +32,7 @@ The problem with Bitcoin
 - Most efforts to do this have failed.
 - Problem 2: It doesn't scale.
 
-Ethereum: The first modular blockchain
+Ethereum: Starting to modularize the blockchain stack
 - Ethereum is not only an application (sending ETH), but also a platform.
 - Ehereum unbundled the functionality (the application logic), from the security model.
 - This enabled any developer to extend the functionality of what Ethereum could do, without coordinating to change the security model.
@@ -43,4 +43,9 @@ How Ethereum differs from Bitcoin:
 - Ethereum added turing completeness to transactions, enabling programmers to do anything just like they would when using a turing complete programming language to develop the core protocol by adding an op code.
 - Hence the creation of a fully-fledged "Ethereum virtual machine"
 - Enabled light client verification of state
+
+The problem with Ethereum:
+- Ethereum solved the first problem that Bitcoin faced, but not the second
+- It doesn't scale
+- As you increase the cost of running a node, the cost of verifying the chain goes up. Then light client verification becomes less effective.
 

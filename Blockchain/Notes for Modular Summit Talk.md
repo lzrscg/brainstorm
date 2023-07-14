@@ -1,3 +1,5 @@
+Going to talk about how Bitcoin is not about reaching consensus, it's actually the opposite. It's about not reaching consensus.
+
 Bitcoin is a miracle
 - Starting at the beginning of it all
 - Most people thought it would fail (including economists)

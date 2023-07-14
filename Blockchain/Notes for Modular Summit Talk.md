@@ -28,6 +28,7 @@ The problem with Bitcoin
 - Connecting on-chain and off-chain events is a hard problem, so by increasing the number of things you can do on-chain, it increases the utility of the digital money.
 - Unfortunately, it is really hard to add functionality to Bitcoin because you have to convince the entire community to adopt a hardfork with new op_codes.
 - Most efforts to do this have failed.
+- Problem 2: It doesn't scale.
 
 Ethereum: The first modular blockchain
 - Ethereum is not only an application (sending ETH), but also a platform.
@@ -37,7 +38,7 @@ Ethereum: The first modular blockchain
 
 How Ethereum differs from Bitcoin:
 - Ethereum started as PoW but moved to PoS. Although there are important differences between these, they are not fundamentally different.
-- Ethereum added turing completeness to transactions, enabling programmers to do anything just like they would when using a turning completely programming language to develop the core protocol by adding an op code.
+- Ethereum added turing completeness to transactions, enabling programmers to do anything just like they would when using a turing complete programming language to develop the core protocol by adding an op code.
 - Hence the creation of a fully-fledged "Ethereum virtual machine"
 - Enabled light client verification of state
 

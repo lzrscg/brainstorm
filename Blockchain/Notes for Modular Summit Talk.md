@@ -34,7 +34,7 @@ The problem with Bitcoin
 
 Ethereum: Starting to modularize the blockchain stack
 - Ethereum is not only an application (sending ETH), but also a platform.
-- Ehereum unbundled the functionality (the application logic), from the security model.
+- Ethereum unbundled the functionality (the application logic), from the security model.
 - This enabled any developer to extend the functionality of what Ethereum could do, without coordinating to change the security model.
 - But to be clear, this is not how people were thinking about things at the time.
 
